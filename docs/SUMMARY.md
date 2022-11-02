@@ -4,3 +4,7 @@
 -->
 
 * [Start Here](README.md)
+
+## Plan
+* [Product Development Strategy](pds.md)
+* [Architecture](architecture.md)
