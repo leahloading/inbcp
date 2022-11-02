@@ -211,7 +211,7 @@ export default function Home({ episodes }) {
               Episodes
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
-              Rah, that's a lot of books.
+              Rah, that&#39;s a lot of books.
             </p>
           </div>
           <EpisodeFeed episodes={episodes} />
