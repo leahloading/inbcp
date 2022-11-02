@@ -143,7 +143,7 @@ function EpisodeFeed({ episodes }) {
       {episodes.map((episode) => (
         <div
           key={episode.title}
-          className="flex flex-col overflow-hidden rounded-lg shadow-lg"
+          className="flex flex-col overflow-hidden rounded-sm shadow-lg"
         >
           {/* image */}
           <div className="flex-shrink-0">
