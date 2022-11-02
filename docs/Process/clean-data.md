@@ -41,3 +41,33 @@ function stripTags(original) {
 }
 
 ```
+
+## Episode X
+
+When fetching the itunes_episode and itunes_season properties from the data set there were missing values for a single episode. I used default parameters to account for this, and dealt with the specific episodes individually later on.
+
+```javascript
+    props: {
+      episodes: feed.items.map(
+        ({
+          title,
+          description,
+          enclosures,
+          published,
+          itunes_image,
+          itunes_season = 'X', // default
+          itunes_episode = 'X', // default
+        }) => ({
+          title,
+          description,
+          published,
+          image: itunes_image,
+          itunes_season,
+          itunes_episode,
+          audio: enclosures.map((enclosure) => ({
+            src: enclosure.url,
+            type: enclosure.type,
+          }))[0],
+        })
+      )
+```
