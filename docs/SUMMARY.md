@@ -6,5 +6,5 @@
 * [Start Here](README.md)
 
 ## Plan
-* [Product Development Strategy](pds.md)
-* [Architecture](architecture.md)
+* [Product Development Strategy](./Plan/pds.md)
+* [Architecture](./Plan/architecture.md)
