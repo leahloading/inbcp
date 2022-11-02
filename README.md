@@ -1,6 +1,6 @@
 <h1 align="center">A Podcast App built with Next.js</h1>
 
 <h3 align="center">
-  <a target="_blank" href="https://inbc-podcast.vercel.app/">See the App</a> •
-  <a target="_blank" href="https://github.com/oldboyxx/jira_clone/tree/master/client">Read the Docs</a> 
+  <a href="https://inbc-podcast.vercel.app/" target="_blank">See the App</a> •
+  <a href="https://docs.leahloading.com/inbc-podcast/" target="_blank">Read the Docs</a> 
 </h3>
