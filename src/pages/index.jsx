@@ -62,7 +62,7 @@ function EpisodeEntry({ episode }) {
           <button
             type="button"
             onClick={() => player.toggle()}
-            className="flex items-center text-sm font-bold leading-6 text-pink-500 hover:text-pink-700 active:text-pink-900"
+            className="flex items-center text-sm font-bold leading-6 text-red-600 hover:text-red-800 active:text-red-900"
             aria-label={`${player.playing ? 'Pause' : 'Play'} episode ${
               episode.title
             }`}

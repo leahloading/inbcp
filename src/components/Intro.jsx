@@ -54,17 +54,17 @@ export default function Intro() {
                 src={podcastArtwork}
                 alt=""
                 sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square  bg-zinc-100 object-cover dark:bg-zinc-800"
+                className="aspect-square  bg-zinc-100 object-cover"
               />
             </div>
           </div>
           <div className=" lg:order-first lg:row-span-2">
-            <h1 className="text-center text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-3xl">
+            <h1 className="text-center text-3xl font-bold tracking-tight text-zinc-800 sm:text-3xl">
               It&#39;s Not a Book Club Podcast.
             </h1>
-            <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+            <div className="mt-6 space-y-7 text-base text-zinc-600">
               <p>
-                Brought to you by three south Londoners, Reuben, Zach and
+                Brought to you by three south Londoners: Reuben, Zach and
                 Kehinde.
               </p>
             </div>
