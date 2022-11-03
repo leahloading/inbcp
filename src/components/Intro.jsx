@@ -59,11 +59,11 @@ export default function Intro() {
             </div>
           </div>
           <div className=" lg:order-first lg:row-span-2">
-            <h1 className="text-center text-3xl font-bold tracking-tight text-zinc-800 sm:text-3xl">
+            <h1 className="text-center text-2xl font-bold tracking-tight text-zinc-800 sm:text-3xl">
               It&#39;s <span className="line-through">Not</span> a Book Club
-              Podcast.
+              Podcast
             </h1>
-            <div className="mt-6 space-y-7 text-base text-zinc-600">
+            <div className="mt-6 space-y-7 text-center text-base text-zinc-600">
               <p>
                 Brought to you by three south Londoners: Reuben, Zach and
                 Kehinde.
@@ -99,7 +99,7 @@ export default function Intro() {
                   className="group flex items-center"
                   aria-label={label}
                 >
-                  <Icon className="h-8 w-8 fill-slate-600 group-hover:fill-slate-900" />
+                  <Icon className="h-8 w-8 fill-slate-700 group-hover:fill-red-700" />
                   <span className="hidden sm:ml-3 sm:block">{label}</span>
                 </Link>
               </li>
