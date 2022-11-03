@@ -175,6 +175,8 @@ export default function Home({ episodes }) {
           name="twitter:image"
           content="https://storage.buzzsprout.com/variants/bZS7K9cwXTvz5m5ijveFFdS1/b49cbe86cb411762753e730c58953bb88ad958a9d657212c074729b6f04e5463"
         />
+        <meta name="twitter:site" content="@ITSNOTABOOKCLUB" />
+        <meta name="twitter:creator" content="@leahloading" />
       </Head>
       <Intro />
       <Episodes episodes={episodes} />
