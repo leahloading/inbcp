@@ -153,7 +153,7 @@ export default function Home({ episodes }) {
           property="og:description"
           content="A podcast by three south londoners: Reuben, Zach and Kehinde."
         />
-        <meta property="og:url" content="https://inbc-podcast.vercel.app/" />
+        <meta property="og:url" content="https://inbcp.vercel.app/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="It's Not A Book Club Podcast" />
         <meta
@@ -162,10 +162,7 @@ export default function Home({ episodes }) {
         />
         <meta name="twitter:card" content="summary" />
         <meta property="twitter:domain" content="inbc-podcast.vercel.app" />
-        <meta
-          property="twitter:url"
-          content="https://inbc-podcast.vercel.app/"
-        />
+        <meta property="twitter:url" content="https://inbcp.vercel.app/" />
         <meta name="twitter:title" content="It's Not A Book Club Podcast" />
         <meta
           name="twitter:description"
