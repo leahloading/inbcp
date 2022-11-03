@@ -62,7 +62,7 @@ function EpisodeEntry({ episode }) {
           <button
             type="button"
             onClick={() => player.toggle()}
-            className="flex items-center text-sm font-bold leading-6 text-red-600 hover:text-red-800 active:text-red-900"
+            className="flex items-center text-sm font-bold leading-6 text-red-600 hover:text-red-700 active:text-red-900"
             aria-label={`${player.playing ? 'Pause' : 'Play'} episode ${
               episode.title
             }`}
@@ -123,7 +123,7 @@ function Episodes({ episodes }) {
       </div>
       <div className="relative mx-auto max-w-7xl">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
             Episodes
           </h2>
           <p className=" mx-auto mt-3 max-w-2xl text-gray-500 sm:mt-4">
