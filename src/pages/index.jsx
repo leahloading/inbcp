@@ -5,6 +5,7 @@ import Head from 'next/head'
 
 import Intro from '@/components/Intro'
 import { useAudioPlayer } from '@/components/AudioProvider'
+import { DateFormatted } from '@/components/DateFormatted'
 
 // // fake player
 // const player = {
@@ -43,6 +44,8 @@ function EpisodeEntry({ episode }) {
   )
 
   let player = useAudioPlayer(audioPlayerData)
+
+  let date = new Date(episode.published)
   return (
     <div
       key={episode.title}
@@ -102,9 +105,7 @@ function EpisodeEntry({ episode }) {
               {/* </a> */}
             </p>
             <div className="flex space-x-1 text-sm text-gray-500">
-              <time dateTime={new Date(episode.published)}>
-                {new Date(episode.published).toDateString()}
-              </time>
+              <DateFormatted date={date} className="" />
               {/* <span aria-hidden="true">&middot;</span> */}
               {/* <span>{post.readingTime} read</span> */}
             </div>
