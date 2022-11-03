@@ -47,13 +47,13 @@ export function AudioPlayer() {
         <PlayButton player={player} size="medium" />
       </div>
       <div className="mb-[env(safe-area-inset-bottom)] flex flex-1 flex-col gap-3 overflow-hidden p-1">
-        <Link
+        {/* <Link
           href={player.meta.link}
           className="truncate text-center text-sm font-bold leading-6 md:text-left"
           title={player.meta.title}
-        >
-          {player.meta.title}
-        </Link>
+        > */}
+        {player.meta.title}
+        {/* </Link> */}
         <div className="flex justify-between gap-6">
           <div className="flex items-center md:hidden">
             <MuteButton player={player} />
