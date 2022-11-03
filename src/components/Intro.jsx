@@ -79,14 +79,23 @@ export default function Intro() {
             className="mt-4 flex justify-center gap-10 text-xs font-medium leading-7 text-slate-700 sm:gap-8 lg:text-base"
           >
             {[
-              ['Spotify', SpotifyIcon],
-              ['Apple Podcast', ApplePodcastIcon],
-              ['Overcast', OvercastIcon],
-              ['RSS Feed', RSSIcon],
-            ].map(([label, Icon]) => (
+              [
+                'Spotify',
+                SpotifyIcon,
+                'https://open.spotify.com/show/2ZgTm0yBRe8reSrRKY7uzk',
+              ],
+              [
+                'Apple Podcasts',
+                ApplePodcastIcon,
+                'https://podcasts.apple.com/us/podcast/its-not-a-book-club-podcast/id1518839823?uo=4',
+              ],
+              // ['Overcast', OvercastIcon, '#'],
+              ['RSS Feed', RSSIcon, 'https://feeds.buzzsprout.com/403111.rss'],
+            ].map(([label, Icon, link]) => (
               <li key={label} className="flex">
                 <Link
-                  href="/"
+                  target="_blank"
+                  href={link}
                   className="group flex items-center"
                   aria-label={label}
                 >
