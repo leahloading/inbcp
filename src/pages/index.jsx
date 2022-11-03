@@ -160,7 +160,7 @@ export default function Home({ episodes }) {
           property="og:image"
           content="https://storage.buzzsprout.com/variants/bZS7K9cwXTvz5m5ijveFFdS1/b49cbe86cb411762753e730c58953bb88ad958a9d657212c074729b6f04e5463"
         />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary" />
         <meta property="twitter:domain" content="inbc-podcast.vercel.app" />
         <meta
           property="twitter:url"
