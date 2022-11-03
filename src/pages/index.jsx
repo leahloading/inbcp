@@ -1,66 +1,116 @@
+import { useMemo } from 'react'
 import parse from 'rss-to-json'
 
 import Head from 'next/head'
 
 import Intro from '@/components/Intro'
+import { useAudioPlayer } from '@/components/AudioProvider'
 
-function EpisodeFeed({ episodes }) {
+// // fake player
+// const player = {
+//   playing: false,
+//   toggle() {
+//     return 'hi'
+//   },
+// }
+
+function PlayPauseIcon({ playing, ...props }) {
   return (
-    <div className="mx-auto mt-12 grid max-w-md gap-5 md:max-w-3xl md:grid-cols-2 lg:max-w-none lg:grid-cols-3">
-      {episodes.map((episode) => (
-        <div
-          key={episode.title}
-          className="flex flex-col overflow-hidden rounded-sm shadow-lg"
-        >
-          {/* image */}
-          <div className="flex-shrink-0">
-            <img
-              className="h-96 w-full object-cover"
-              src={episode.image.href}
-              alt=""
+    <svg aria-hidden="true" viewBox="0 0 10 10" fill="none" {...props}>
+      {playing ? (
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M1.496 0a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5H2.68a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5H1.496Zm5.82 0a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5H8.5a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5H7.316Z"
+        />
+      ) : (
+        <path d="M8.25 4.567a.5.5 0 0 1 0 .866l-7.5 4.33A.5.5 0 0 1 0 9.33V.67A.5.5 0 0 1 .75.237l7.5 4.33Z" />
+      )}
+    </svg>
+  )
+}
+
+function EpisodeEntry({ episode }) {
+  let audioPlayerData = useMemo(
+    () => ({
+      title: episode.title,
+      audio: {
+        src: episode.audio.src,
+        type: episode.audio.type,
+      },
+    }),
+    [episode]
+  )
+
+  let player = useAudioPlayer(audioPlayerData)
+  return (
+    <div
+      key={episode.title}
+      className="flex flex-col overflow-hidden rounded-sm shadow-lg"
+    >
+      {/* image */}
+      <div className="flex-shrink-0">
+        <img
+          className="h-96 w-full object-cover"
+          src={episode.image.href}
+          alt=""
+        />
+      </div>
+      {/* card content */}
+      <div className="flex flex-1 flex-col justify-between bg-white p-6">
+        <div className="flex-1">
+          <button
+            type="button"
+            onClick={() => player.toggle()}
+            className="flex items-center text-sm font-bold leading-6 text-pink-500 hover:text-pink-700 active:text-pink-900"
+            aria-label={`${player.playing ? 'Pause' : 'Play'} episode ${
+              episode.title
+            }`}
+          >
+            <PlayPauseIcon
+              playing={player.playing}
+              className="h-2.5 w-2.5 fill-current"
             />
-          </div>
-          {/* card content */}
-          <div className="flex flex-1 flex-col justify-between bg-white p-6">
-            <div className="flex-1">
-              <p className="text-sm font-medium text-indigo-600">
-                {/* <a href={'#'} className="hover:underline">
+            <span className="ml-3" aria-hidden="true">
+              Listen
+            </span>
+          </button>
+          {/* <p className="text-sm font-medium text-indigo-600">
+                <a href={'#'} className="hover:underline">
                   {'Listen'}
-                </a> */}
-              </p>
-              {/* <a href={'#'} className="mt-2 block"> */}
-              <p className="mt-2 text-xl font-semibold text-gray-900">
-                {episode.title}
-              </p>
-              {/* <p className="mt-3 text-base text-gray-500">
+                </a>
+              </p> */}
+          {/* <a href={'#'} className="mt-2 block"> */}
+          <p className="mt-2 text-xl font-semibold text-gray-900">
+            {episode.title}
+          </p>
+          {/* <p className="mt-3 text-base text-gray-500">
                 {stripTags(episode.description)}
               </p> */}
+          {/* </a> */}
+        </div>
+        <div className="mt-6 flex items-center">
+          <div className="flex-shrink-0">
+            {/* <a href={'#'}> */}
+            <span className="sr-only">{`${episode.itunes_season}${episode.itunes_episode}`}</span>
+            {/* </a> */}
+          </div>
+          <div className="">
+            <p className="text-sm font-medium text-gray-900">
+              {/* <a href={'#'} className="hover:underline"> */}
+              {`Season ${episode.itunes_season} Episode ${episode.itunes_episode}`}
               {/* </a> */}
-            </div>
-            <div className="mt-6 flex items-center">
-              <div className="flex-shrink-0">
-                {/* <a href={'#'}> */}
-                <span className="sr-only">{`${episode.itunes_season}${episode.itunes_episode}`}</span>
-                {/* </a> */}
-              </div>
-              <div className="">
-                <p className="text-sm font-medium text-gray-900">
-                  {/* <a href={'#'} className="hover:underline"> */}
-                  {`Season ${episode.itunes_season} Episode ${episode.itunes_episode}`}
-                  {/* </a> */}
-                </p>
-                <div className="flex space-x-1 text-sm text-gray-500">
-                  <time dateTime={new Date(episode.published)}>
-                    {new Date(episode.published).toDateString()}
-                  </time>
-                  {/* <span aria-hidden="true">&middot;</span> */}
-                  {/* <span>{post.readingTime} read</span> */}
-                </div>
-              </div>
+            </p>
+            <div className="flex space-x-1 text-sm text-gray-500">
+              <time dateTime={new Date(episode.published)}>
+                {new Date(episode.published).toDateString()}
+              </time>
+              {/* <span aria-hidden="true">&middot;</span> */}
+              {/* <span>{post.readingTime} read</span> */}
             </div>
           </div>
         </div>
-      ))}
+      </div>
     </div>
   )
 }
@@ -80,7 +130,11 @@ function Episodes({ episodes }) {
             Rah, that&#39;s a lot of books.
           </p>
         </div>
-        <EpisodeFeed episodes={episodes} />
+        <div className="mx-auto mt-12 grid max-w-md gap-5 md:max-w-3xl md:grid-cols-2 lg:max-w-none lg:grid-cols-3">
+          {episodes.map((episode) => (
+            <EpisodeEntry episode={episode} />
+          ))}
+        </div>
       </div>
     </div>
   )
