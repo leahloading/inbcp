@@ -1,5 +1,5 @@
 import Image from 'next/future/image'
-import podcastArtwork from '@/images/portrait.jpg'
+import podcastArtwork from '@/images/podcastArtwork.jpg'
 import Link from 'next/link'
 import { Container } from '@/components/Container'
 
