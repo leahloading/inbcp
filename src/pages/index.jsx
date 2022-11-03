@@ -132,7 +132,7 @@ function Episodes({ episodes }) {
         </div>
         <div className="mx-auto mt-12 grid max-w-md gap-5 md:max-w-3xl md:grid-cols-2 lg:max-w-none lg:grid-cols-3">
           {episodes.map((episode) => (
-            <EpisodeEntry episode={episode} />
+            <EpisodeEntry episode={episode} key={episode.title} />
           ))}
         </div>
       </div>
