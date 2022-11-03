@@ -60,7 +60,7 @@ export default function Intro() {
           </div>
           <div className=" lg:order-first lg:row-span-2">
             <h1 className="text-center text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-3xl">
-              It's Not a Book Club Podcast.
+              It&#39;s Not a Book Club Podcast.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
