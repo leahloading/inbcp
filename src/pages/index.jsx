@@ -153,6 +153,9 @@ export default function Home({ episodes }) {
           property="og:description"
           content="A podcast by three south londoners: Reuben, Zach and Kehinde."
         />
+        <meta property="og:url" content="https://inbc-podcast.vercel.app/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="It's Not a Book Club Podcast" />
       </Head>
       <Intro />
       <Episodes episodes={episodes} />
