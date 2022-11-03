@@ -1,4 +1,4 @@
-import { AudioPlayer } from './AudioPlayer/AudioPlayer'
+import { AudioPlayer } from './player/AudioPlayer'
 
 export function Layout({ children }) {
   return (
