@@ -146,11 +146,11 @@ export default function Home({ episodes }) {
         <title>It&#39;s Not a Book Club Podcast</title>
         <meta
           name="description"
-          content="A podcast by three south londoners, Reuben, Zach and Kehinde."
+          content="A podcast by three south londoners: Reuben, Zach and Kehinde."
         />
         <meta
           property="og:description"
-          content="A podcast by three south londoners, Reuben, Zach and Kehinde."
+          content="A podcast by three south londoners: Reuben, Zach and Kehinde."
         />
       </Head>
       <Intro />
