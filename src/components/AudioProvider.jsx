@@ -33,7 +33,7 @@ const AudioPlayerContext = createContext()
   calling an of this methods will update the state variable returned by the useReducer hook in our audioProvider function component
   
   In computing the payload is the part of transmitted data that is the actual intended message. 
-  Having an object property called payload probably helps to have consistency in our dispatch function's action object:
+  Having an object property called payload helps to have consistency in our dispatch function's action object:
 
   {
     type: ...
@@ -176,9 +176,9 @@ export function AudioProvider({ children }) {
       This essentially allows us to call the dispatch function to update the state using our reducer function (audioReducer and thus reducers)
     
       This is especially  true because the AudioProvider component is initilaised on every page because it is used in the custom App (_app.jsx)
-      This might also allow us to keep state when navigating pages? e.g. Pressing play on a podcast and having it continue even if you click on another podcast page
+      This allows us to keep state when navigating pages e.g. Pressing play on a podcast and having it continue even if you open another page
 
-      useReducer allows us to manage mu;tiple pieces of state more easily and useContext provides us access to the state and actions methods that allow us to update that state
+      useReducer allows us to manage multiple pieces of state more easily and useContext provides us access to the state and actions methods that allow us to update that state
   */
 
   // note how the children are wrapped in the AudioPlayerContext.Provider
@@ -240,8 +240,7 @@ export function useAudioPlayer(data) {
   // context provider from AudioProvider component which is basically the things attached to the api variable
   let player = useContext(AudioPlayerContext)
 
-  /* i'm not sure about this but i think returning this object has something to do with the components at a lower level that
-    receive player as a prop being able to access properties
+  /* 
     UseMemo expects a calculation function as its first argument, and we need to wrap the return in parentheses to prevent an implicit return
     so all we actually have here is a copy of player (using spread operator) and then adding two methods and a getter
   */

@@ -34,8 +34,8 @@ export function AudioPlayer() {
     setCurrentTime(null)
   }, [player.currentTime])
 
-  /* this suggests to me that we should only see this audio player if the player has some meta data (which is passed in from index.jsx or episode.jsx)
-     the useAudioPlayer function HAS to be called via the index.jsx or episode.jsx pages before we have access to this AudioPlayer, 
+  /* - we should only see this audio player if the player has some meta data (which is passed in from index.jsx or episode.jsx)
+     - the useAudioPlayer function HAS to be called via the index.jsx or episode.jsx pages before we have access to this AudioPlayer, 
      because the AudioPlayer function component itself does not pass any data to the useAudioPlayer function, and thus can't directly update the meta state. */
   if (!player.meta) {
     return null

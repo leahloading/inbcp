@@ -7,14 +7,6 @@ import Intro from '@/components/Intro'
 import { useAudioPlayer } from '@/components/AudioProvider'
 import { DateFormatted } from '@/components/DateFormatted'
 
-// // fake player
-// const player = {
-//   playing: false,
-//   toggle() {
-//     return 'hi'
-//   },
-// }
-
 function PlayPauseIcon({ playing, ...props }) {
   return (
     <svg aria-hidden="true" viewBox="0 0 10 10" fill="none" {...props}>
@@ -78,36 +70,21 @@ function EpisodeEntry({ episode }) {
               Listen
             </span>
           </button>
-          {/* <p className="text-sm font-medium text-indigo-600">
-                <a href={'#'} className="hover:underline">
-                  {'Listen'}
-                </a>
-              </p> */}
-          {/* <a href={'#'} className="mt-2 block"> */}
+
           <p className="mt-2 text-xl font-semibold text-gray-900">
             {episode.title}
           </p>
-          {/* <p className="mt-3 text-base text-gray-500">
-                {stripTags(episode.description)}
-              </p> */}
-          {/* </a> */}
         </div>
         <div className="mt-6 flex items-center">
           <div className="flex-shrink-0">
-            {/* <a href={'#'}> */}
             <span className="sr-only">{`${episode.itunes_season}${episode.itunes_episode}`}</span>
-            {/* </a> */}
           </div>
           <div className="">
             <p className="text-sm font-medium text-gray-900">
-              {/* <a href={'#'} className="hover:underline"> */}
               {`Season ${episode.itunes_season} Episode ${episode.itunes_episode}`}
-              {/* </a> */}
             </p>
             <div className="flex space-x-1 text-sm text-gray-500">
               <DateFormatted date={date} className="" />
-              {/* <span aria-hidden="true">&middot;</span> */}
-              {/* <span>{post.readingTime} read</span> */}
             </div>
           </div>
         </div>

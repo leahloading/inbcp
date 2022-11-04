@@ -65,7 +65,7 @@ function parseTime(seconds) {
 /*
   ## formatTime
   
-  this function is formatting the return from parseTime as timer vibe
+  this function is formatting the return from parseTime as timer
 */
 function formatTime(seconds, totalSeconds = seconds) {
   let totalWithoutLeadingZeroes = totalSeconds.slice(
@@ -187,7 +187,6 @@ export function Slider(props) {
         />
       </div>
       <div className="hidden items-center gap-2 md:flex">
-
         {/* output element shows us the current running time of the playing episode  */}
         <output
           {...outputProps}
