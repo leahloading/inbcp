@@ -7,14 +7,6 @@ import Intro from '@/components/Intro'
 import { useAudioPlayer } from '@/components/AudioProvider'
 import { DateFormatted } from '@/components/DateFormatted'
 
-// // fake player
-// const player = {
-//   playing: false,
-//   toggle() {
-//     return 'hi'
-//   },
-// }
-
 function PlayPauseIcon({ playing, ...props }) {
   return (
     <svg aria-hidden="true" viewBox="0 0 10 10" fill="none" {...props}>
